@@ -8,6 +8,7 @@
   <title>Moody Kittens | CodeWorks</title>
   <link rel="shortcut icon" href="moody-logo.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Catamaran&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,7 +18,7 @@
   <header class="bg-dark d-flex align-items-center p-1 space-between">
     <img src="moody-logo.png" height="60" alt="Moody Kittens">
     <form class="" onsubmit="addKitten(event)">
-      <div class="d-flex">
+      <div id="add-kitten" class="d-flex hidden">
         <input placeholder="Name" type="text" name="name" />
         <button class="btn-special" type="submit">
           /ᐠ｡ꞈ｡ᐟ\
@@ -26,7 +27,7 @@
     </form>
   </header>
   <main class="container">
-    <div id="welcome" class="d-flex justify-content-center">
+    <div id="welcome" class="d-flex justify-content-center mt-3">
       <div class="card p-2 text-center w-50">
         <img src="moody-logo.png" height="250" alt="Moody Kittens">
         <div class="mt-2">
@@ -39,8 +40,12 @@
       </div>
     </div>
     <div class="p-2">
-      <div id="kittens" class="d-flex align-items-center flex-wrap">
+      <div id="kittens" class="d-flex align-items-center flex-wrap hidden">
       </div>
+      <div id="clearKittens" class="hidden d-flex justify-content-center mt-3">
+        <button class = "btn-cancel" onclick="clearKittens()">Clear All Kittens</button>
+      </div>
+     
   </main>
   <footer class="card bg-dark text-light p-2 d-flex align-items-center justify-content-center">
     <small>Created with <span style="color: var(--primary)">&hearts;</span> by CodeWorks</small>
