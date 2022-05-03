@@ -17,12 +17,12 @@
 
 body{
   background-color: var(--bg);
-  font-size: 16pt;
+  font-size: 14pt;
   color: var(--text-color);
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Catamaran', sans-serif;
+  font-family: 'Goldman', sans-serif;
 }
 
 header{

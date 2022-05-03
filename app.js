@@ -6,16 +6,18 @@ let kittens = []
  * then add that data to the kittens list.
  * Then reset the form
  */
+
+
 function addKitten(event) {
   event.preventDefault()
   let form = event.target
-
   let kitten = {
     id: generateId(),
     name: form.name.value,
     mood: "tolerant",
     affection: 5
   }
+
 
   let kittenName = form.name.value
   let currentKitten = kittens.find(kitten => kitten.name == kittenName)
@@ -72,10 +74,10 @@ function drawKittens() {
   let kittensTemplate = ""
   kittens.forEach((kitten,index) => {
     kittensTemplate += `
-    <div class="cat-border mt-3 mb-3 card shadow container ${kitten.mood} kitten">
+    <div class="cat-border mt-3 mb-3 p-3 card shadow container ${kitten.mood} kitten">
     <img src="https://robohash.org/${kitten.name}?set=set4&size=140x140">
-    <div><h3 class="mt-1 mb-1">${kitten.name}</h3></div>
-    <div><p><span>Mood: ${kitten.mood}</span></p></div>
+    <div><h3 class="mt-1 mb-1 d-flex justify-content-center">${kitten.name}</h3></div>
+    <div class="mt-3"><p><span>Mood: ${kitten.mood}</span></p></div>
     <div><p><span>Affection: ${kitten.affection}</span></p></div>
     <p>
     <button class="btn-dark" onclick="pet('${kitten.id}')">Pet</button>
@@ -91,6 +93,7 @@ function drawKittens() {
   document.getElementById("add-kitten").classList.remove("hidden")
   kittenListElement.innerHTML = kittensTemplate
   document.getElementById("clearKittens").classList.add("hidden")
+
   if(kittens.length > 0){
     document.getElementById("clearKittens").classList.remove("hidden")
   }
