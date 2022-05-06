@@ -11,11 +11,19 @@ let kittens = []
 function addKitten(event) {
   event.preventDefault()
   let form = event.target
+  let randAffect = Math.floor(Math.random() * (6 - 2 + 1)) + 2;
+  let defaultMood = "tolerant"
+  if (randAffect > 5){
+    defaultMood = "happy"
+  }
+  else if (randAffect < 4){
+    defaultMood = "angry"
+  }
   let kitten = {
     id: generateId(),
     name: form.name.value,
-    mood: "tolerant",
-    affection: 5
+    mood: defaultMood,
+    affection: randAffect
   }
 
 
@@ -108,7 +116,6 @@ function drawKittens() {
  */
 function findKittenById(id) {
   return kittens.find(kitten => kitten.id == id)
-  
 }
 
 
