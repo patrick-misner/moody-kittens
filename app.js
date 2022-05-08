@@ -87,11 +87,13 @@ function drawKittens() {
     <div><h3 class="mt-1 mb-1 d-flex justify-content-center">${kitten.name}</h3></div>
     <div class="mt-3"><p><span>Mood: ${kitten.mood}</span></p></div>
     <div><p><span>Affection: ${kitten.affection}</span></p></div>
-    <p>
-    <button class="btn-dark" onclick="pet('${kitten.id}')">Pet</button>
+    <div class="d-flex justify-content-center mt-2">
+    <button class="btn-dark f-flex justify-content-center" onclick="pet('${kitten.id}')">Pet Kitty</button>
+    </div>
+    <div class="d-flex justify-content-center mt-1">
     <button onclick="catnip('${kitten.id}')">Feed CatNip</button>
-    </p>
-    <div style="pointer-events: all;" class="d-flex justify-content-center">
+    </div>
+    <div style="pointer-events: all;" class="d-flex justify-content-center mt-2">
     <i class="action far fa-trash-alt text-danger" onclick="removeKitten('${kitten.id}')"></i>
     </div>
     </div>
